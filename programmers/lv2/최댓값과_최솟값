@@ -1,0 +1,12 @@
+#int(s.split()) 은 가능하지 않다.
+#min(arr1, arr2)도 가능함.
+
+def solution(s):
+    arr = list(map(int,s.split()))
+    MIN = str(min(arr))
+    MAX = str(max(arr))
+    answer = ''
+    
+    answer = MIN + ' ' + MAX
+    print(answer)
+    return answer
