@@ -1,0 +1,41 @@
+#Goal: 탈락하는 사람의 번호(index), 몇 번째에 탈락하는가
+#append(x)는 x 자체를 그대로 넣고(리스트여도)
+#extend(x)는 x의 요소들을 그대로 넣는다(그래서 리스트채로 넣고 싶으면 애초에 x가 [[값]])
+
+def solution(n, words):
+    answer = []
+    suc = [] #말한 단어 list
+    index = 0
+    ord = 0
+    check = True
+
+    for i,v in enumerate(words):
+        if suc.count(v) !=0:
+            index = (i%n) + 1
+            ord = (i//n) +1
+            answer.extend([index,ord])
+            print("i는",i)
+            check=False
+            break
+        elif i!=0:
+            if words[i-1][-1] != v[0]:
+                index = (i+1)%n
+                ord = (i+1)//n
+                answer.extend([index,ord+1])
+                print("여기일까 i는",i,ord)
+                print("answer",answer)
+                check=False
+                break
+        
+        
+        suc.append(v)
+    
+    if check==True:
+        return [0,0]
+        
+        
+    # # [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+    # print("이게 suc ",suc)
+    # print("이게 answer ",answer)
+
+    return answer
