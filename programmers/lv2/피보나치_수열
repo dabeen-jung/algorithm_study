@@ -1,0 +1,16 @@
+#리스트에서 미리 구한 값을 이후에 다른 피보나치 수열을 구할 때
+#  배열에서 직접 가져올 수 있음
+
+#다시 풀기
+def solution(n):
+    answer = 0
+    cache = [0,1]
+    
+    if n==0 or n==1:
+        return cache[n]
+    
+    for i in range(2,n+1):
+        cache.append(cache[i-1] + cache[i-2])
+        
+    
+    return cache[n]%1234567
