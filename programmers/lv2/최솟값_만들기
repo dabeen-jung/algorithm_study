@@ -1,0 +1,13 @@
+#최댓값, 최솟값의 갯수를 비교힘
+#최댓값이 많은 배열 * 최솟값이 많은 배열 순으로 정렬 후
+# 곱해주자
+
+def solution(A,B):
+    answer = 0
+    A.sort(reverse=True)
+    B.sort()
+    
+    for i in range(len(A)):
+        answer += A[i]*B[i]
+    
+    return answer

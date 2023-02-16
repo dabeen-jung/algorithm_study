@@ -1,0 +1,23 @@
+# 예외의 경우를 생각하자
+# ex)  s='()())(()' 이면 False 임
+# 앞에가 완성이고, re가 0이면서 결과적으로 re=0이 나와도
+#중간에 ')('가 들어간 경우가 있을 수 있음
+
+def solution(s):
+    answer = True
+    re = 0
+    
+    for index, value in enumerate(s):
+        if value == ')':
+            if index > 0 and re == 0:
+                return False
+            re -= 1
+        elif value == '(':
+            re += 1
+        
+    
+    if re != 0 or s[0] == ')':
+        answer = False
+    
+
+    return answer
