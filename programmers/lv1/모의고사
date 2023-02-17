@@ -1,0 +1,34 @@
+def solution(answers):
+    answer = []
+    arr1=[1,2,3,4,5]
+    arr2=[2,1,2,3,2,4,2,5]
+    arr3=[3,3,1,1,2,2,4,4,5,5]
+    
+    cnt1=0
+    cnt2=0
+    cnt3=0
+    
+    
+    for an in range(len(answers)):
+
+        if(arr1[an%5]==answers[an]):
+           cnt1+=1
+
+        if(arr2[an%8]==answers[an]):
+            cnt2+=1
+        if(arr3[an%10]==answers[an]):
+            cnt3+=1
+
+    rank=[cnt1,cnt2,cnt3]
+    Max=max(rank)
+
+    print(rank)
+
+    
+    for i in range(len(rank)):
+        if(rank[i]==Max):    
+            answer.append(i+1)
+
+    return answer
+    
+print(solution([2,1,2,3,2,4,2,5,2,1]))
