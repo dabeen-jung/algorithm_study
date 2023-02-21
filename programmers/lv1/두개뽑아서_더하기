@@ -1,0 +1,13 @@
+def solution(numbers):
+    answer = []
+    
+    for i in range(len(numbers)):
+        #이전에 계산을 했기 때문에 j는 i+1이여야 함
+        for j in range(i+1, len(numbers)):
+            if numbers[i]+numbers[j] not in answer:
+                answer.append(numbers[i] + numbers[j])
+    
+    #정렬
+    answer.sort()
+    
+    return answer

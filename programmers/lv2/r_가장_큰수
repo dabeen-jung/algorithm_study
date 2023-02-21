@@ -1,0 +1,16 @@
+#goal: 첫번째자리를 비교해서 큰 순 대로 정렬, 
+#2,3..n번째자리 순대로 비교해서 정렬
+#다시 풀어야 함 ( functools.cmp_to_key) 이요해보기
+
+def solution(numbers):
+    numbers = list(map(str, numbers))
+    # numbers=['0','0']
+    
+    #666,101010, 222 => 문자열끼리의 정렬이므로 사전식 정렬(한 글자씩)
+    numbers.sort(key=lambda x: x*3, reverse=True)
+    
+    # print(numbers)
+    # print(''.join(numbers))
+    # 왜? str인데 굳이 int로 한 번 더 감싼건가
+    #'0','0'의 경우=> 0 하나만 나와야 함.
+    return str(int(''.join(numbers)))
