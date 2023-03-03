@@ -1,0 +1,31 @@
+#같은 숫자는 싫어(lv1)
+#goal: 중복 제거 및 원소 순서는 유지. (정렬x)
+
+def solution(arr):
+    answer = []
+    
+    # 1. 중복을 제거 BUT 순서가 뒤죽박죽
+    #print(list(set(arr))
+    
+    # 2.for문 통해 2개의 리스트 비교하여 중복제거
+    # for v in arr:
+    #     if v not in answer:
+    #         answer.append(v)
+    cnt = 0
+    for v in arr:
+        if cnt >= 0 :
+            if cnt > 0 and v == answer[cnt-1] :
+                continue
+            answer.append(v)
+            cnt += 1
+       
+    #3.딕셔너리를 이용해 중복제거 (순서 유지)
+    # 리스트 값(중복된)들을 딕셔너리로 전환 
+    #인자로 들어온 데이터들을 key값으로 해서 딕셔너리 자료형으로 만듦 
+    # ㄴ> 이것을 list로 바꿔주면 됨.
+    # answer = list(dict.fromkeys(arr))
+    
+    
+    
+    
+    return answer
