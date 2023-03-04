@@ -1,0 +1,18 @@
+#goal: 1칸,2칸에 한해서 겹치지 않게 나올 수 있는 가짓 수
+#다시풀기
+#문제의 접근 방법을 생각하지 못함.
+
+def solution(n):
+    arr=[1,1] #n=2인 경우 생각 (0일때, 1일때)
+    
+    #실제 있는 경우엔 찾아준다.
+    if n==0 or n==1:
+        return arr[n]
+    
+    for i in range(2,n+1):
+        #없는 경우엔 바로 값을 찾아 넣어줌
+        arr.append(arr[i-1] + arr[i-2])
+    
+    
+    
+    return arr[n]%1234567
