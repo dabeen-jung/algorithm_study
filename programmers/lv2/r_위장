@@ -1,0 +1,14 @@
+#goal: 서로 다른 옷의 조합의 수 (다시 풀기) , 조합
+
+from collections import Counter
+
+def solution(clothes):
+    answer = 1
+    
+    arr = Counter(kind for value, kind in (clothes))
+    for key,value in arr.items():
+        answer *= (value+1)
+    #모든 옷을 입지 않았을 경우 제외
+    answer-=1
+    
+    return answer
