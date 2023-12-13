@@ -30,6 +30,7 @@ for i in range(4):
         
 #print(arr)
 '''
+
 for i in range(4):
     a,b,x,y,a_1,b_1,x_1,y_1 = map(int,input().split())
 

@@ -4,6 +4,7 @@ https://haesoo9410.tistory.com/193
 list를 정렬을 하게 될때 x:() 괄호안에 튜플형식으로 집어넣는다.
 -x[0]이면 내림차순으로 하겠다는 뜻이다.
 '''
+
 n=int(input())
 arr=[]
 #arr=[[]  for i in range(n)]

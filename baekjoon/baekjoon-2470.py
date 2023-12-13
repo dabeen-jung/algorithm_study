@@ -1,5 +1,4 @@
 #두 용액 4701
-
 from operator import itemgetter
 n=int(input())
 MAX=1000000000

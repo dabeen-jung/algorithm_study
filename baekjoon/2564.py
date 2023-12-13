@@ -3,6 +3,7 @@
 #1:북, 2:남, 3:서, 4:동
 #limit: n,w,h<=100 , b > 0
 
+
 hap=0
 w,h=map(int,input().split())
 n=int(input())

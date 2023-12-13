@@ -3,6 +3,8 @@ w,h=map(int,input().split())
 a,b=map(int,input().split())
 t=int(input())
 
+
+
 '''
 while(tt<=t):   #w인 경우 
     if(a==0):
