@@ -4,10 +4,28 @@
 
 # 혹은 투 포인터를 쓰길 추천한다고 함. 배열로 못 만들까?
 
+
 n = int(input())
 arr=list(map(int,input().split()))
 x = int(input())
 cnt = 0
+
+arr.sort()
+rt = n-1
+lt = 0
+
+while (lt < rt):
+    res = arr[lt] + arr[rt]
+    if res == x:
+        cnt+=1
+        lt+=1
+    elif res < x:
+        lt+=1
+    else:
+        rt-=1
+
+print(cnt)
+
 
 #시간초과 남
 # for i in range(n-1):
@@ -18,8 +36,8 @@ cnt = 0
 # print(cnt)
 
 #시간 초과 남
-for num in arr:
-    if x - num in arr:
-        cnt+=1
-
-print(cnt)
+# for num in arr:
+#     if x - num in arr:
+#         cnt+=1
+#
+# print(cnt)
