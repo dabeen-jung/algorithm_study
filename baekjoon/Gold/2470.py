@@ -1,4 +1,4 @@
-#두 용액 4701
+#두 용액 4701 (골드5)
 from operator import itemgetter
 n=int(input())
 MAX=1000000000

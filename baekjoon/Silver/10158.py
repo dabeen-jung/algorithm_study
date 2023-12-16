@@ -1,4 +1,4 @@
-#개미(백준 10158번)
+#개미 (실버3)
 w,h=map(int,input().split())
 a,b=map(int,input().split())
 t=int(input())
