@@ -9,7 +9,7 @@ arr = list(map(int,input().split()))
 prefix_sum = [0]
 
 for i in arr:
-    prefix_sum.append(prefix_sum[-1]+i)
+    prefix_sum.append(prefix_sum[-1] + i)
 
 for _ in range(m):
     a,b = map(int,input().split())
