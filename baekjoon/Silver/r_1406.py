@@ -22,7 +22,7 @@ for i in range(n):
 
     elif ans[0] =='L':
         if str:
-            #str(왼배열)의 끝을 삭제하며 이를 right(오른 배열)에 추가
+            #str(왼배열)의 끝을 삭제하며 이를 right(오른 배열)에 추가  str [ 1,2,3,]   right [1,5]
             right.appendleft(str.pop())
 
     elif ans[0] == 'D':
