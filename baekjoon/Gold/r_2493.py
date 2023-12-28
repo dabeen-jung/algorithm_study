@@ -10,7 +10,6 @@ input = sys.stdin.readline
 
 n = int(input())
 arr = list(map(int,input().split()))
-
 stack = []
 res = [0] * n
 
