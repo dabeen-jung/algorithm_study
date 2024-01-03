@@ -10,7 +10,6 @@ from collections import deque
 import sys
 input = sys.stdin.readline
 
-
 #큐의크기, 뽑으려는 갯수
 n, m = map(int,input().split())
 # 뽑아내려고 하는 위치(가장 처음 큐에서의 위치)
