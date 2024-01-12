@@ -8,7 +8,7 @@ input = sys.stdin.readline
 n = int(input())
 cnt = 0
 for i in range(n):
-    arr = input().rstrip()
+    arr = input().rstrip() #ABAB
     stack = []
 
     for v in arr:
