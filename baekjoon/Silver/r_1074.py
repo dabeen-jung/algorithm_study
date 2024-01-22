@@ -1,5 +1,5 @@
-# [재귀] Z (실1)
-
+# [재귀, 분할정복] Z (실1)
+# 오류 : 재귀 길이 때문에 오류
 import sys
 input = sys.stdin.readline
 
@@ -19,10 +19,10 @@ def rep(n, x, y):
         if x+1 == r and y+1 == c:
             return 3
 
-    n //= 2
+    n //= 2 #한 변의 길이(가로,세로 등)
 
     if x <= r < x+n and y <= c < y+n:  # Z의 1사분면
-        return n*n*0 + rep(n, x, y)
+        return rep(n, x, y)
 
     if x <= r < x+n and y+n <= c:  # Z의 2사분면
         return n*n*1 + rep(n, x, y+n)

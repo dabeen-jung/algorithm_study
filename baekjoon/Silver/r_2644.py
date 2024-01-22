@@ -29,7 +29,7 @@ for i in range(m):
 cnt = 0
 result = [] #결과 저장 값
 
-def dfs(start,cnt):
+def dfs(start, cnt):
     visited[start] = True #방문처리
     cnt+=1
 
@@ -41,7 +41,7 @@ def dfs(start,cnt):
         #방문한 적 있는가?
         if visited[v] == 0:
             #? 왜 cnt를 넣어주는가?
-            dfs(v, cnt)
+            dfs(v, cnt) # 검은색 노드 -> cnt =1
 
 dfs(a,cnt)
 # print(result)
