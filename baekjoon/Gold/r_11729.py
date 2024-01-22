@@ -1,21 +1,28 @@
 #[재귀] 하노이의 탑 이동순서 (골5)
-# 첫번째에서 3번째 장대로 옮길 것인데 이동 순서 출력하고 이동횟수를 최소로 출력
 #goal: 이동 홧수가 최소, 그 과정 출력
 
-import sys
-input = sys.stdin.readline
+#핵심) '가장 큰 원반이 목표위치로 옮겨진다면' 해결됨
+#즉 이외 나머지 기둥들은, 목표 위치가 아닌 기둥으로 옮겨놓고 이주시킴
 
-
-
+#원판갯수, 시작위치, 도착위치
 def rep(k, start, end):
-    if k == 0:
-        # print(start, end)
+    #goal: k-1개의 원판들은 다른 곳(목표위치 말고)으로 가게끔
+
+    # (최종) 3.모든 원판을 옮긴 마지막으로 최종 원반을 이동
+    if k == 1:
+        print(start, end)
         return
-    # 6-start-end하면 넘겨야 할 막대 위치가 나옴
-    rep(k-1, start, 6-start-end) #1단계
-    print(start,end) #2단계
-    rep(k-1, 6-start-end, end) #3단계)
+
+    # 1+2+3 = 6이다. 즉, 6-start-end하면 넘겨야 할 막대 위치가 나옴
+    # 1. 그 밖의 기둥방향으로 이동
+    rep(k-1, start, 6-start-end)
+
+    # 이동경로 출력
+    print(start,end)
+    # 2. 모은 것들 도착기둥으로 이동
+    rep(k-1, 6-start-end, end)
 
 k = int(input())
-print(2**k-1)
+
+print(2**k-1) #출력) 하노이의 탑 '최소 이동 횟수'
 rep(k,1,3)
