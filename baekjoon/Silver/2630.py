@@ -21,9 +21,9 @@ def rep(s_row, s_col, divid):
             if paper[i][j] != num:
                 flag = 1
                 break
-
         if flag:
             break
+
 
     # 현재 종이가 전부 같은 수
     if not flag:
