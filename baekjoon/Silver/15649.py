@@ -17,7 +17,7 @@ def rep(num):
             check[i] = 1
             result.append(i)
             rep(num+1)
-
+            #함수 다녀와서 check,result 배열 다시 초기화해줌
             check[i] = False
             result.pop()
 

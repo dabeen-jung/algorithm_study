@@ -13,7 +13,7 @@ def rep(s_row, s_col, divid):
     global blue,white
 
     #맨 첫번째 칸 값
-    num = paper[s_row][s_col]
+    num = paper[s_row][s_col] #1
     flag = 0
 
     for i in range(s_row, s_row + divid):
@@ -36,6 +36,9 @@ def rep(s_row, s_col, divid):
 
         divid //= 2 # 2로 나눠줌
 
+        # for i in range(2):
+        #     for j in rna:
+        #         rep(s_row + i*divid, s_col+j*divid, divid)
         rep(s_row, s_col, divid)
         rep(s_row, s_col + divid, divid)
 

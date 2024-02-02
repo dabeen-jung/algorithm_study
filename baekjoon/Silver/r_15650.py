@@ -29,7 +29,7 @@ input = sys.stdin.readline
 n,m = map(int, input().split())
 result = []
 
-def f(start, depth): #
+def f(start, depth): # 1 -> 12 13 => 2 23
     if depth == m:
         print(' '.join(map(str, result)))
         return
