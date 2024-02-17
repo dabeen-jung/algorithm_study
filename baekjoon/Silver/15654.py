@@ -23,9 +23,10 @@ def f(depth):
 
 #1,7,8,9
     for i in range(n): #0~3 0
-        if check[i] == False: #아직 안 씀
+        # print(check)
+        if check[i] == False: #아직 안 씀 check = [1,false,false,False ]
             check[i] = 1
-            result.append(arr[i])
+            result.append(arr[i]) # [1,7]
             f(depth+1)
             check[i]=0
             result.pop()
