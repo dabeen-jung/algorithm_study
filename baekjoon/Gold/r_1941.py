@@ -50,7 +50,8 @@ def bfs(arr):
                 visited +=1
                 que.append((nx,ny))
 
-    if visited != 7: #7번 방문하지 않았다?
+    # 7명이 인접하지 않았다는 것 => 방문체크가 7명이 안된거임.
+    if visited != 7:
         return False
     else:
         return True
