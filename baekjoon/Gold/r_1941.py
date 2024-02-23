@@ -67,7 +67,7 @@ def dfs(depth, start, cnt):
 
     #7명 뽑힘
     if depth == 7:
-        # 동시에 모든 여학생들이 전원이 붙어 있다(인접)
+        # 함수 호출: 모든 여학생들이 전원이 붙어 있는지 여부 확인
         if bfs(arr):
             result += 1
         return
@@ -77,10 +77,12 @@ def dfs(depth, start, cnt):
         x = i // 5
         y = i % 5
 
-        #해당 위치 추가
+        #해당 학생 '좌표' 추가
         arr.append((x,y))
-        #재귀함수 실행
+        #재귀함수 실행 -> 동시에 임도연파면 cnt+1
         dfs(depth+1 , i+1, cnt + (graph[x][y] == 'Y'))
+
+        #가지치기: 백트래킹
         arr.pop() #해당 위치 삭제
 
 
