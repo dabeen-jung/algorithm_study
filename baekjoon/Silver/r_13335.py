@@ -40,11 +40,14 @@ while idx < n :
         # if 2) 다리에 트럭 합류 x =>다리 위 트럭만 이동시킴
         # 0 7 -> 7 0으로 밀리는 것을 표현해주고자
         bridge.append(0)
+    # print(idx, bridge)
 # print(sec)
 
 # 2. 1을 이어서 다리 위 트럭이 다 지나는 경우까지
 while bridge:
+    print(bridge)
     sec += 1
     bridge.popleft()
+
 
 print(sec)
