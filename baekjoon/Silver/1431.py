@@ -8,8 +8,10 @@ import sys
 input = sys.stdin.readline
 
 N = int(input())
+#arr = [input().rstrip().split() => list 로 반환되어서 2중 list가 됨
+# arr = [input().rstrip() .... ] => 문자열로 반환됨 list 하나가 끝임 
 arr = [input().rstrip().split() for _ in range(N)]
-
+# print(arr)
 
 def digist_s(x): # '1A2CF' 가 올 때
     return sum(int(c) for c in x if c.isdigit())
