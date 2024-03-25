@@ -17,6 +17,6 @@ for v in arr:
         cnt += (val // v)
         val %= v #남은 금액 4200-> 200
 
-    if v == 0: #목표 금액 도달
+    if val == 0: #목표 금액 도달
         break
 print(cnt)
