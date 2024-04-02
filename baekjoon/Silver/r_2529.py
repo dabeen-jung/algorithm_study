@@ -29,7 +29,7 @@ def dfs(depth,num):
             MAX = num
         return
 
-    for i in range(10): #숫자(k번 거칠거임)
+    for i in range(10): #숫자(k번 거칠거임) A < B ....  2 < 3
         if not visited[i]:
             if depth == 0 or (inequality[depth-1] == '<' and int(num[-1]) < (i)) or (inequality[depth-1] == '>' and int(num[-1])> i):
                 visited[i] = True

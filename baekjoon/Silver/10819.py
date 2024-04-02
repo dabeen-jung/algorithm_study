@@ -22,10 +22,12 @@ def f(depth):
     if depth == n:
         result = 0
         for i in range(n-1):
+            print(arr)
+            print(arr[i], A[arr[i]])
             result += abs(A[arr[i]] - A[arr[i+1]])
         MAX = max(result, MAX)
         return
-
+# A=  20 1 15 8 4 10
     for i in range(n):
         if visited[i] == 0:
             visited[i] = 1
