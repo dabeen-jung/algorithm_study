@@ -42,8 +42,7 @@ else:
 for i in range(k, len(sushi)):
     left = i - k  # 범위에서 제외될 초밥 (처음) 0 1  2
     right = i  # 범위에 포함될 새로운 초밥 (끝) 4  5  6
-    # print(left,right)
-    # print(counter)
+
     counter[sushi[left]] -= 1 #처음자리를 뺌
     if counter[sushi[left]] == 0:
         kind -= 1
