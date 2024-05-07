@@ -30,4 +30,19 @@ for v in arr:
     cnt+=1
     print(v[0])
 
-
+# import sys
+# from collections import defaultdict
+#
+# input = sys.stdin.readline
+#
+# N, M = map(int, input().split())
+# d = defaultdict(int)
+# for _ in range(M):
+#     stNum = str(input().strip('\n'))
+#     if d[stNum]:
+#         # d.pop(stNum)
+#     d[stNum] = 10
+#     print(d)
+#
+# for val in list(d.keys())[:N]:
+#     print(val)
