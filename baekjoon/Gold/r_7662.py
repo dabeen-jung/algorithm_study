@@ -60,22 +60,27 @@ for _ in range(t):
     # 각 노드의 id에 대해 삭제되었는지 아닌지를 저장
     # 처음에는 아무 값도 없으므로 모두 삭제된 것으로 간주
     deleted = [True] * k
+
     for i in range(k):
         com, n = input().split()
         n = int(n)
+
         if com == 'I':
-            heapq.heappush(minQ, (n, i))
+            heapq.heappush(minQ, (n, i)) #[[7,idx]
             heapq.heappush(maxQ, (-n, i))
-            deleted[i] = False
-        else:
+            deleted[i] = False #[[false],.[True]...]
+        else: # 'D' 삭제 연산 (+1일 땐, 최댓값 삭제 -1은 최솟값 삭제)
             if n == 1:
                 # 삭제되지 않은 값 찾기
-                # 삭제된 값은 힙에서 제거
+                # 삭제된 값(deleted[idx] =True라)은 힙에서 제거
                 while maxQ and deleted[maxQ[0][1]]:
+                    #최소큐에는 삭제된 애가 최대큐 우선순위 상 앞이다?
+                    #우리 큐에서도 제거처리해줌
                     heapq.heappop(maxQ)
                 if maxQ:
+                    #최대큐에서 삭제처리 한 것을 최소큐에도 알리고자 True체크
                     deleted[maxQ[0][1]] = True
-                    heapq.heappop(maxQ)
+                    heapq.heappop(maxQ) #최대큐에서만 삭제
             else:
                 while minQ and deleted[minQ[0][1]]:
                     heapq.heappop(minQ)
