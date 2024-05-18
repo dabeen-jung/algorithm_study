@@ -60,3 +60,34 @@ print(bfs(1))
 # # 방문(친구의 친구)한 노드들에서 - 상근이 제외
 # print(len(list(filter(lambda x:x==True, visited))) - 1)
 
+#성공코드 [dfs 윤준님꺼]
+# from collections import deque
+#
+# N = int(input())
+# deq = deque([[] for _ in range(N+1)])
+# for i in range(1, int(input())+1):
+#     a, b = map(int, input().split())
+#     deq[a].append(b)
+#     deq[b].append(a)
+#
+# queue = deque([])
+# visited = [0] * N
+# visited[0] = 1
+# friend = []
+#
+#
+# def dfs(depth, lst):
+#     global friend
+#     if depth > 1:
+#         return
+#
+#     for val in lst:
+#         if not visited[val-1]:
+#             friend.append(val)
+#             visited[val - 1] = 1
+#             dfs(depth + 1, deq[val])
+#             visited[val - 1] = 0
+#
+#
+# dfs(0, deq[1])
+# print(len(set(friend)))
